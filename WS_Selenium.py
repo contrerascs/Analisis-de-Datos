@@ -10,5 +10,3 @@ driver = webdriver.Chrome(service=servicio)
 web = 'https://en.wikipedia.org/wiki/1982_FIFA_World_Cup'
 
 driver.get(web)
-matches = driver.find_elements(by='xpath', value='//td[@align="right"]/..')
-time.sleep(10)
