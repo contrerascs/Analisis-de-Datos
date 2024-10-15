@@ -26,7 +26,6 @@ for match in matches:
 dict_football = {'home': home, 'score': score, 'away': away}
 df_football = pd.DataFrame(dict_football)
 df_football['Year'] = 1990
-df_football_no_first = df_football.iloc[:, 1:]
 time.sleep(2)
 print(df_football_no_first.index[0])
 #df_football_no_first.to_csv('Datasets/test_1990.csv')    
