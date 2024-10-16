@@ -55,4 +55,4 @@ def obtener_data_faltante(year):
 fifa = [obtener_data_faltante(year) for year in years]
 driver.quit()
 df_fifa = pd.concat(fifa,ignore_index=True)
-df_fifa.to_csv('Datasets/FIFA_HISTORY_COMPLETE.csv', index=False)   
+df_fifa.to_csv('Datasets/FIFA_HISTORY_COMPLETE.csv', index=False)    
