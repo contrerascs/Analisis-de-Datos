@@ -16,7 +16,7 @@ path = 'D:/Sam Contreras/Documents/Programacion/Python/ChromeDriver/chromedriver
 servicio = Service(executable_path=path)
 driver = webdriver.Chrome(service=servicio)
 
-def obtener_data_faltante(year):
+def get_matches(year):
     web = f'https://en.wikipedia.org/wiki/{year}_FIFA_World_Cup'
 
     driver.get(web)
@@ -51,7 +51,12 @@ def obtener_data_faltante(year):
     time.sleep(2)
     return df_football
 
-fifa = [obtener_data_faltante(year) for year in years]
+# Resultados de todos los partidos en la historia
+fifa = [get_matches(year) for year in years]
 driver.quit()
 df_fifa = pd.concat(fifa,ignore_index=True)
 df_fifa.to_csv('Datasets/Fifa_WorldCup_Matches_Include_2022.csv', index=False)    
+
+# fixture
+df_fixture = get_matches(2022)
+df_fixture.to_csv('Datasets/Fifa_WorldCup_Fixture.csv', index=False)
